@@ -5,9 +5,9 @@
 # Email: admin@hostonnet.com
 # Github: https://github.com/HostOnNet/squid-proxy-installer
 
-USERNAME = "squser"
-PASSWORD = "user#123456"
-PORT = "user#123456"
+USERNAME="squser"
+PASSWORD="user#123456"
+PORT="user#123456"
 
 red=`tput setaf 1`
 green=`tput setaf 2`
@@ -21,12 +21,12 @@ if cat /etc/os-release | grep PRETTY_NAME | grep "Ubuntu 16.04"; then
     /bin/rm -f /etc/squid/squid.conf
     /usr/bin/touch /etc/squid/blacklist.acl
     /usr/bin/wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/andreybrigunet/squid-proxy-installer/master/squid.conf
-    /sbin/iptables -I INPUT -p tcp --dport $PORT -j ACCEPT
+    /sbin/iptables -I INPUT -p tcp --dport ${PORT} -j ACCEPT
     /sbin/iptables-save
     service squid restart
     update-rc.d squid defaults
 
-    /usr/bin/htpasswd -b -c /etc/squid/passwd $USERNAME $PASSWORD
+    /usr/bin/htpasswd -b -c /etc/squid/passwd ${USERNAME} ${PASSWORD}
 
     echo ""  | tee -a /etc/sysctl.conf
     echo "net.ipv4.icmp_echo_ignore_all = 1"  | tee -a /etc/sysctl.conf
