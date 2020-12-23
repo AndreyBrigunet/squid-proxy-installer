@@ -7,7 +7,9 @@
 
 USERNAME="squser"
 PASSWORD="user#123456"
-PORT="user#123456"
+PORT="49951"
+squid_conf="/etc/squid/squid.conf"
+search="REPLACE_SQUID_PORT"
 
 red=`tput setaf 1`
 green=`tput setaf 2`
@@ -18,9 +20,13 @@ if cat /etc/os-release | grep PRETTY_NAME | grep "Ubuntu 16.04"; then
     /usr/bin/apt update
     /usr/bin/apt -y install apache2-utils squid3
     touch /etc/squid/passwd
-    /bin/rm -f /etc/squid/squid.conf
+    /bin/rm -f squid_conf
     /usr/bin/touch /etc/squid/blacklist.acl
-    /usr/bin/wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/andreybrigunet/squid-proxy-installer/master/squid.conf
+    /usr/bin/wget --no-check-certificate -O squid_conf https://raw.githubusercontent.com/andreybrigunet/squid-proxy-installer/master/squid.conf
+    
+    # Cauta REPLACE_SQUID_PORT si schimba $PORT
+    sed -i "s/$search/$PORT/" $squid_conf
+    
     /sbin/iptables -I INPUT -p tcp --dport ${PORT} -j ACCEPT
     /sbin/iptables-save
     service squid restart
