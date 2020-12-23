@@ -37,3 +37,6 @@ To update password for am existing user, run
 ```
 /usr/bin/htpasswd /etc/squid/passwd USERNAME_HERE
 ```
+
+Create a firewall rule
+# ![logo](/assets/firewall.png | width=100) Firewall
