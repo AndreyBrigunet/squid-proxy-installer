@@ -79,7 +79,7 @@ elif cat /etc/os-release | grep PRETTY_NAME | grep "Ubuntu 16.04"; then
     echo "Proxy address: ${green}${USERNAME}:${PASSWORD}@${ip}:${PORT}${reset}"
 
 else
-    echo "OS NOT SUPPORTED. Contact admin@hostonnet.com to add support for your OS"
+    echo "OS NOT SUPPORTED."
     exit 1;
 fi
 
