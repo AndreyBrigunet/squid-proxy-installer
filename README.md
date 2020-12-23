@@ -21,5 +21,5 @@ sudo ./squid3-install.sh
 
 Exemple  
 ```
-sudo ./squid3-install.sh -p 49223 -u User  -s Pass
+sudo ./squid3-install.sh -p 49223 -u User -s Pass
 ```
