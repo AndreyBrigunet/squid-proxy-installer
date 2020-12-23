@@ -8,6 +8,16 @@
 USERNAME="squser"
 PASSWORD="user#123456"
 PORT="49951"
+
+while getopts p:u:s: flag
+do
+    case "${flag}" in
+        p) PORT=${OPTARG};;
+        u) USERNAME=${OPTARG};;
+        s) PASSWORD=${OPTARG};;
+    esac
+done
+
 squid_conf="/etc/squid/squid.conf"
 search="REPLACE_SQUID_PORT"
 

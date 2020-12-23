@@ -14,12 +14,12 @@ chmod 755 squid3-install.sh
 sudo ./squid3-install.sh
 ```
 
-# Create Users
+# Input arguments 
+    -p Port
+    -u UserName 
+    -s Password
 
-To create users, run
-
+Exemple  
 ```
-/usr/bin/htpasswd -b -c /etc/squid/passwd USERNAME_HERE PASSWORD_HERE
+sudo ./squid3-install.sh -p 49223 -u User  -s Pass
 ```
-
-replace USERNAME_HERE and PASSWORD_HERE with your desired user name and password.
