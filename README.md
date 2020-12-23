@@ -39,4 +39,4 @@ To update password for am existing user, run
 ```
 
 Create a firewall rule
-# ![logo](/assets/firewall.png | width=100)
+# ![logo](/assets/firewall.png = 50x)
