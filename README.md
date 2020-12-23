@@ -23,3 +23,17 @@ Exemple
 ```
 sudo ./squid3-install.sh -p 49223 -u User -s Pass
 ```
+
+
+# Create Users (info)
+
+To create users, run
+```
+/usr/bin/htpasswd -b -c /etc/squid/passwd USERNAME_HERE PASSWORD_HERE
+```
+
+To update password for am existing user, run
+
+```
+/usr/bin/htpasswd /etc/squid/passwd USERNAME_HERE
+```
