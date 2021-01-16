@@ -32,7 +32,7 @@ if cat /etc/os-release | grep PRETTY_NAME | grep "Ubuntu 18.04"; then
     touch /etc/squid/passwd
     /bin/rm -f $squid_conf
     /usr/bin/touch /etc/squid/blacklist.acl
-    /usr/bin/wget --no-check-certificate -O $squid_conf https://raw.githubusercontent.com/serverok/squid/master/squid.conf
+    /usr/bin/wget --no-check-certificate -O $squid_conf https://raw.githubusercontent.com/andreybrigunet/squid-proxy-installer/master/squid.conf
         
     # Cauta REPLACE_SQUID_PORT si schimba $PORT
     sed -i "s/$search/$PORT/" $squid_conf
